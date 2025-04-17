@@ -1,7 +1,9 @@
 /* layout.css */
 
 body {
-    font-family: 'Arial', sans-serif;
+    /* switched to your new font site‑wide */
+    font-family: "D-DIN", Arial, sans-serif;
+
     background-color: #0A1128;
     min-height: 100vh;
     color: var(--light-blue);
@@ -15,13 +17,12 @@ body {
 body::before {
     content: "";
     position: fixed;
-    top: 100px; /* Adjust this value if your header is taller or shorter */
+    top: 100px;                /* tweak if header height changes */
     left: 0;
     width: 100%;
     height: calc(100% - 80px);
     pointer-events: none;
     z-index: 9999;
-    /* Reduced blur and spread for a softer, smaller glow */
     box-shadow: inset 0 0 100px 15px rgba(77, 159, 236, 0.4);
 }
 

@@ -1,9 +1,21 @@
+/* === custom font ===================================== */
+@font-face {
+    font-family: "D-DIN";
+    src: url("fonts/D-DIN.otf") format("opentype"); /* adjust the path if you store it elsewhere */
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;          /* fallback text shows until the font loads */
+}
+/* ===================================================== */
+
+/* CSS reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Global design tokens */
 :root {
     --black: #000000;
     --light-blue: #A5D8FF;
@@ -13,17 +25,9 @@
     --accent-blue: #00BFFF;
 }
 
+/* Generic gradient animation (used by other modules) */
 @keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-        background-size: 50% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-        background-size: 150% 150%;
-    }
-    100% {
-        background-position: 0% 50%;
-        background-size: 50% 50%;
-    }
+    0%   { background-position: 0%   50%; background-size: 50%  50%; }
+    50%  { background-position: 100% 50%; background-size: 150% 150%; }
+    100% { background-position: 0%   50%; background-size: 50%  50%; }
 }

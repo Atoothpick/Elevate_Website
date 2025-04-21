@@ -1,12 +1,18 @@
+<!-- portfolio.html | rebuilt to support new project pages under /projects/ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Portfolio | Elevate</title>
-    <link href="styles.css" rel="stylesheet">
+
+    <!-- core bundle -->
+    <link href="styles.css" rel="stylesheet" />
 </head>
+
 <body>
+    <!-- ------------- NAVIGATION ------------- -->
     <header>
         <nav>
             <a href="index.html" class="logo">Elevate</a>
@@ -20,58 +26,63 @@
         </nav>
     </header>
 
+    <!-- ------------- MAIN CONTENT ------------- -->
     <main>
-        <section class="hero">
+        <!-- HERO (slimmer padding than homepage) -->
+        <section class="hero" style="padding:4rem 2rem 2rem">
             <div class="hero-content">
-                <!-- Wrap hero heading in .gradient-text -->
-                <h1><span class="gradient-text">Our Architectural Visualizations</span></h1>
-                <p>A showcase of innovative perspectives and design excellence</p>
+                <h1><span class="gradient-text">Our Architectural Visualisations</span></h1>
+                <p>A selection of projects that showcase our love of light, material and form</p>
             </div>
         </section>
 
+        <!-- PORTFOLIO GRID -->
         <section class="portfolio-section">
             <div class="portfolio-grid">
+                <!-- Duplicate/modify each .portfolio-item as you add new projects -->
+
                 <div class="portfolio-item">
                     <h3>Urban Residence Complex</h3>
-                    <p>A modern residential project exploring sophisticated urban living spaces</p>
-                    <a href="#" class="portfolio-button">View Project Details</a>
+                    <p>Innovative mixed‑use residential tower</p>
+                    <a href="projects/urban-residence.html" class="portfolio-button">View Project</a>
                 </div>
 
                 <div class="portfolio-item">
                     <h3>Modern Office Interiors</h3>
-                    <p>Innovative workspace design focusing on functionality and aesthetic appeal</p>
-                    <a href="#" class="portfolio-button">View Project Details</a>
+                    <p>Workplace design focused on well‑being</p>
+                    <a href="projects/modern-office.html" class="portfolio-button">View Project</a>
                 </div>
 
                 <div class="portfolio-item">
                     <h3>Sustainable Design Concept</h3>
-                    <p>Architectural solution emphasizing environmental consciousness and green living</p>
-                    <a href="#" class="portfolio-button">View Project Details</a>
+                    <p>Low‑carbon campus with mass‑timber core</p>
+                    <a href="projects/sustainable-campus.html" class="portfolio-button">View Project</a>
                 </div>
 
                 <div class="portfolio-item">
-                    <h3>Cultural Community Center</h3>
-                    <p>Design that celebrates community heritage and creates dynamic public spaces</p>
-                    <a href="#" class="portfolio-button">View Project Details</a>
+                    <h3>Cultural Community Centre</h3>
+                    <p>Celebrating heritage through adaptive reuse</p>
+                    <a href="projects/community-centre.html" class="portfolio-button">View Project</a>
                 </div>
 
                 <div class="portfolio-item">
                     <h3>Minimalist Residential Retreat</h3>
-                    <p>Clean lines and open spaces defining a contemporary living experience</p>
-                    <a href="#" class="portfolio-button">View Project Details</a>
+                    <p>Clean lines, warm textures, forest setting</p>
+                    <a href="projects/minimalist-retreat.html" class="portfolio-button">View Project</a>
                 </div>
 
                 <div class="portfolio-item">
                     <h3>Luxury Resort Concept</h3>
-                    <p>Architectural elegance harmonizing with natural surroundings</p>
-                    <a href="#" class="portfolio-button">View Project Details</a>
+                    <p>Coastal getaway that blends with nature</p>
+                    <a href="projects/luxury-resort.html" class="portfolio-button">View Project</a>
                 </div>
             </div>
         </section>
 
+        <!-- CALL TO ACTION -->
         <section class="cta-section">
             <h2>Ready to Elevate Your Project?</h2>
-            <p>Let's discuss how we can transform your architectural vision</p>
+            <p>Let’s discuss how we can transform your architectural vision.</p>
             <a href="contact.html" class="cta-button">Schedule a Consultation</a>
         </section>
     </main>

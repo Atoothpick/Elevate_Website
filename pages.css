@@ -15,6 +15,20 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
+@media (max-width: 1000px) {
+    .services-grid,
+    .pricing-grid,
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 650px) {
+    .services-grid,
+    .pricing-grid,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 .service-item,
 .pricing-tier,
@@ -27,6 +41,8 @@
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .service-item:hover,
@@ -41,6 +57,84 @@
 .portfolio-item h3 {
     color: var(--light-blue);
     margin-bottom: 1rem;
+}
+
+/* --- Blurred background portfolio cards --- */
+.portfolio-item {
+    border-radius: 20px;
+    background: #181b29;
+    min-height: 240px;
+    padding: 2.5rem 1.25rem 2rem 1.25rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(12px) brightness(0.6);
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    transition: filter 0.3s;
+    border-radius: 20px;
+}
+
+.portfolio-item > h3,
+.portfolio-item > p,
+.portfolio-item > a {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 12px rgba(10,16,32,0.32);
+}
+
+.portfolio-item h3 {
+    color: var(--light-blue, #A5D8FF);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.portfolio-item p {
+    color: rgba(180, 210, 240, 0.95);
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.portfolio-button {
+    display: inline-block;
+    background: transparent;
+    color: #73b2ff;
+    border: 1.7px solid #5a8fd6;
+    border-radius: 8px;
+    padding: 0.9rem 2.4rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.16s, color 0.16s, border 0.16s;
+    margin-top: 0.5rem;
+    z-index: 1;
+}
+
+.portfolio-button:hover,
+.portfolio-button:focus {
+    background: rgba(90,160,255,0.13);
+    color: #2a6ad2;
+    border-color: #73b2ff;
+    outline: none;
+}
+
+.portfolio-item:hover .portfolio-bg {
+    filter: blur(18px) brightness(1);  /* Brighter (1), or try 1.1 for extra pop */
+    transition: filter 0.3s;
 }
 
 /* Pricing Specific Styles */
@@ -196,6 +290,18 @@
     gap: 2rem;
     margin-top: 2rem;
 }
+@media (max-width: 1000px) {
+    .services-grid,
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 650px) {
+    .services-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 .service-card,
 .project-card {
@@ -236,28 +342,15 @@
     color: var(--light-blue);
 }
 
-/* 
-   We'll reuse the same keyframes & styling 
-   from .gradient-text, but apply it to .gradient-badge 
-   for the "Most Popular" text. 
-*/
-
-/* Use the same animation as in components.css */
+/* Animated Gradient Badge */
 @keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
-
-/* Make the "Most Popular" text a bright, desert-titanium-infused gradient */
 .gradient-badge {
     background-color: transparent !important;
     color: transparent !important;
     border: none !important;
-
     background: linear-gradient(
         90deg,
         #ffffff 0%,
@@ -270,14 +363,143 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    /* Exponential multi-layer glow */
     text-shadow:
         0 0 3px   rgba(255, 255, 255, 0.8),
         0 0 6px   rgba(140, 191, 255, 0.7),
         0 0 12px  rgba(77, 159, 236, 0.6),
         0 0 24px  rgba(210, 198, 184, 0.4),
         0 0 48px  rgba(210, 198, 184, 0.2);
-
     animation: gradientMove 15s linear infinite;
 }
+/* --- Global tighter spacing --- */
+main {
+    padding: 0 1.5rem;
+}
+
+/* --- Header/Nav tweaks --- */
+header {
+    height: var(--header-height);
+    padding: 0 1rem;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.logo {
+    font-size: 1.3rem;
+    margin-right: 1rem;
+}
+
+/* Center nav horizontally, adjust spacing between links */
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem; /* smaller gap between menu items */
+}
+
+nav ul li a {
+    font-size: 0.9rem;
+    padding: 0.04rem 0;
+}
+
+/* --- Hero Section --- */
+.hero {
+    padding: 2rem 0 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* --- Services Section --- */
+.services-section {
+    padding: 2.5rem 0 3rem;
+}
+
+.services-grid {
+    gap: 1.5rem; /* reduce grid gap */
+}
+
+.service-item {
+    padding: 1.5rem 1.25rem;
+}
+
+/* --- Portfolio Section --- */
+.portfolio-section {
+    padding: 3rem 0 3rem;
+}
+
+.portfolio-grid {
+    gap: 1.8rem; /* slightly smaller gap */
+}
+
+.portfolio-item {
+    padding: 2rem 1rem 1.8rem;
+}
+
+/* --- CTA Section --- */
+.cta-section {
+    padding: 2rem 0 3rem;
+}
+
+.cta-section h2 {
+    margin-bottom: 0.6rem;
+    font-size: 2rem;
+}
+
+.cta-section p {
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    nav ul {
+        gap: 0.8rem;
+    }
+    nav ul li a {
+        font-size: 0.85rem;
+    }
+    .service-item,
+    .portfolio-item {
+        padding: 1.25rem 1rem;
+    }
+    .cta-section h2 {
+        font-size: 1.7rem;
+    }
+    .cta-button {
+        width: 100%;
+        font-size: 1.05rem;
+    }
+}
+

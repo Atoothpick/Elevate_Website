@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballistics Simulation | ELEVATE TECHNICA</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .project-section {
+            max-width: 950px;
+            margin: 3rem auto;
+            padding: 2rem 1.5rem;
+            background: rgba(10, 16, 32, 0.82);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(77,159,236,0.08);
+        }
+        .project-title {
+            color: var(--light-blue);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.6rem;
+        }
+        .project-desc {
+            color: #A5D8FF;
+            text-align: center;
+            margin-bottom: 2.2rem;
+            font-size: 1.12rem;
+        }
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+        .project-card {
+            flex: 1 1 320px;
+            min-width: 220px;
+            max-width: 360px;
+            background: rgba(20,30,50,0.78);
+            border-radius: 12px;
+            padding: 1.2rem 1rem 1.4rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(77,159,236,0.05);
+        }
+        .project-card video {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            background: #222;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        .project-card h3 {
+            color: var(--light-blue);
+            font-size: 1.09rem;
+            margin: 0.2rem 0 0.4rem 0;
+        }
+        .project-card p {
+            color: #A5D8FF;
+            font-size: 0.95rem;
+            text-align: center;
+            margin: 0;
+        }
+        .feature-list {
+            margin: 2rem auto 2rem auto;
+            max-width: 650px;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            background: rgba(30,40,70,0.18);
+            color: #A5D8FF;
+            font-size: 1rem;
+        }
+        .feature-list li {
+            margin-bottom: 0.6rem;
+            padding-left: 0.5em;
+        }
+        @media (max-width: 900px) {
+            .project-grid { flex-direction: column; gap: 1.5rem;}
+            .project-card { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">ELEVATE TECHNICA</a>
+            <div class="nav-center">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../pricing.html">Pricing</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-section">
+            <h1 class="project-title">Ballistics Simulation: EFP vs. Armor</h1>
+            <div class="project-desc">
+                This engineering simulation explores the interaction of explosively formed projectiles (EFPs) with different armor configurations, providing high-speed visual analysis for defense research and design optimization.
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="../assets/Videos/EFP solid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>EFP vs. Solid Armor</h3>
+                    <p>Direct impact simulation showing penetration and deformation of a solid armor plate.</p>
+                </div>
+                <div class="project-card">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="../assets/Videos/EFP Spaced.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>EFP vs. Spaced Armor</h3>
+                    <p>Analysis of an EFP striking a spaced armor configuration, highlighting differences in performance.</p>
+                </div>
+                <div class="project-card">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="../assets/Videos/Projectiles Made From Explosions. EFP Armor Simulation..mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>Full Armor Penetration Simulation</h3>
+                    <p>Comprehensive simulation sequence demonstrating real-world effects of EFPs on protective materials.</p>
+                </div>
+            </div>
+            <ul class="feature-list">
+                <li>Side-by-side comparison of solid vs. spaced armor under EFP attack</li>
+                <li>Physics-based modeling of high-speed projectile formation and impact</li>
+                <li>Dynamic visualizations for research, design, and presentation</li>
+            </ul>
+            <div class="project-desc" style="margin-top:1.5rem;">
+                <b>Conclusion:</b> The Ballistics Simulation project highlights how advanced simulation tools can drive innovation in armor design and defense engineering by revealing critical performance differences between protection strategies.
+            </div>
+        </section>
+    </main>
+</body>
+</html>

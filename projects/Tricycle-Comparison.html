@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerodynamic Comparison of Electric Tricycles | ELEVATE TECHNICA</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .trike-section {
+            max-width: 950px;
+            margin: 3rem auto;
+            padding: 2rem 1.5rem;
+            background: rgba(10, 16, 32, 0.82);
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(77,159,236,0.08);
+        }
+        .trike-title {
+            color: var(--light-blue);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.6rem;
+        }
+        .trike-desc {
+            color: #A5D8FF;
+            text-align: center;
+            margin-bottom: 2.2rem;
+            font-size: 1.12rem;
+        }
+        .trike-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+        .trike-card {
+            flex: 1 1 240px;
+            min-width: 220px;
+            max-width: 280px;
+            background: rgba(20,30,50,0.78);
+            border-radius: 12px;
+            padding: 1.2rem 1rem 1.4rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(77,159,236,0.05);
+        }
+        .trike-card img {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            background: #222;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        .trike-card h3 {
+            color: var(--light-blue);
+            font-size: 1.09rem;
+            margin: 0.2rem 0 0.4rem 0;
+        }
+        .trike-card p {
+            color: #A5D8FF;
+            font-size: 0.95rem;
+            text-align: center;
+            margin: 0;
+        }
+        .trike-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2.5rem 0 1.5rem 0;
+            background: rgba(15,23,45,0.9);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .trike-table th, .trike-table td {
+            padding: 0.7rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(77,159,236,0.11);
+            color: #A5D8FF;
+        }
+        .trike-table th {
+            background: rgba(77,159,236,0.07);
+            color: var(--light-blue);
+        }
+        .trike-table tr:last-child td {
+            border-bottom: none;
+        }
+        @media (max-width: 900px) {
+            .trike-grid { flex-direction: column; gap: 1.5rem;}
+            .trike-card { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">ELEVATE TECHNICA</a>
+            <div class="nav-center">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../pricing.html">Pricing</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="trike-section">
+            <h1 class="trike-title">Aerodynamic Comparison of Electric Tricycles</h1>
+            <div class="trike-desc">
+                Three three-wheeled electric vehicles (Tricycle A, B, and C) were tested in a virtual wind tunnel to compare aerodynamic performance using drag force and frontal area. A lower drag coefficient means better efficiency and range.
+            </div>
+            <div class="trike-grid">
+                <div class="trike-card">
+                    <img src="../assets/images/TriA.png" alt="Tricycle A">
+                    <h3>Tricycle A (Skinned)</h3>
+                    <p>Aerodynamic bodywork lowers drag and increases efficiency compared to open-frame designs.</p>
+                </div>
+                <div class="trike-card">
+                    <img src="../assets/images/TriB.png" alt="Tricycle B">
+                    <h3>Tricycle B (Open)</h3>
+                    <p>Open structure results in higher drag, meaning greater energy use at the same speed.</p>
+                </div>
+                <div class="trike-card">
+                    <img src="../assets/images/TriC.png" alt="Tricycle C">
+                    <h3>Tricycle C (Smooth-skinned)</h3>
+                    <p>Smoother, enclosed surfaces reduce drag further, achieving the best aerodynamic performance.</p>
+                </div>
+            </div>
+            <table class="trike-table">
+                <tr>
+                    <th>Tricycle</th>
+                    <th>Drag Force (N)</th>
+                    <th>Frontal Area (m²)</th>
+                    <th>Drag Coefficient</th>
+                </tr>
+                <tr>
+                    <td>A (Skinned)</td>
+                    <td>3.59</td>
+                    <td>0.423</td>
+                    <td>0.46</td>
+                </tr>
+                <tr>
+                    <td>B (Open)</td>
+                    <td>4.29</td>
+                    <td>0.2791</td>
+                    <td>0.83</td>
+                </tr>
+                <tr>
+                    <td>C (Smooth-skinned)</td>
+                    <td>2.84</td>
+                    <td>0.398</td>
+                    <td>0.385</td>
+                </tr>
+            </table>
+            <div class="trike-desc" style="margin-top:1.5rem;">
+                <b>Conclusion:</b> Tricycle C, with its smooth bodywork, had the lowest drag coefficient, showing that thoughtful design improvements can greatly enhance range and efficiency.
+            </div>
+        </section>
+    </main>
+</body>
+</html>

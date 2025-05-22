@@ -1,22 +1,10 @@
-/* === custom font ===================================== */
-@font-face {
-    font-family: "D-DIN";
-    src: url("fonts/D-DIN.otf") format("opentype"); /* adjust the path if you store it elsewhere */
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;          /* fallback text shows until the font loads */
-}
-/* ===================================================== */
+/* reset.css */
 
-/* CSS reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Global design tokens */
+/* Global design tokens + header height */
 :root {
+    /* height of the sticky header bar */
+    --header-height: 56px;
+
     --black: #000000;
     --light-blue: #A5D8FF;
     --dark-blue: #4D9FEC;
@@ -25,7 +13,14 @@
     --accent-blue: #00BFFF;
 }
 
-/* Generic gradient animation (used by other modules) */
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gradient animation helper */
 @keyframes gradientAnimation {
     0%   { background-position: 0%   50%; background-size: 50%  50%; }
     50%  { background-position: 100% 50%; background-size: 150% 150%; }

@@ -1,6 +1,10 @@
+/* navigation.css */
+
+/* Sticky header uses our shared header-height */
 header {
+    height: var(--header-height);
     background-color: rgba(10, 10, 26, 0.8);
-    padding: 1.5rem 2rem;
+    padding: 0 1rem;             /* horizontal only */
     position: sticky;
     top: 0;
     z-index: 100;
@@ -10,42 +14,50 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: center;         /* vertical center in header */
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 .logo {
     color: var(--light-blue);
-    font-size: 2rem;
+    font-size: 1.18rem;
     font-weight: bold;
     text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s, color 0.3s;
+    flex: 0 0 auto;
+    line-height: 1;
+    margin-right: 0.5rem;
 }
 
-.logo:hover {
-    transform: scale(1.05);
-    color: var(--dark-blue);
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
 }
 
 nav ul {
-    display: flex;
     list-style: none;
+    display: flex;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    margin-left: 2rem;
+    margin: 0 1rem;
 }
 
 nav ul li a {
     color: var(--light-blue);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 0.92rem;
+    line-height: 1.1;
     position: relative;
-    transition: color 0.3s ease, transform 0.3s ease;
-    padding: 0.5rem 0;
+    transition: color 0.3s, transform 0.3s;
+    padding: 0.02rem 0;
 }
 
 nav ul li a::after {
@@ -56,7 +68,7 @@ nav ul li a::after {
     bottom: 0;
     left: 0;
     background-color: var(--dark-blue);
-    transition: width 0.3s ease;
+    transition: width 0.3s;
 }
 
 nav ul li a:hover {
@@ -66,4 +78,23 @@ nav ul li a:hover {
 
 nav ul li a:hover::after {
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+    }
+    .nav-center {
+        position: static;
+        transform: none;
+        width: 100%;
+    }
+    nav ul {
+        flex-direction: column;
+        margin-top: 0.4rem;
+    }
+    nav ul li {
+        margin: 0.2rem 0;
+    }
 }

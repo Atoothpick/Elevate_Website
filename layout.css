@@ -1,9 +1,7 @@
 /* layout.css */
 
 body {
-    /* switched to your new font site‑wide */
     font-family: "D-DIN", Arial, sans-serif;
-
     background-color: #0A1128;
     min-height: 100vh;
     color: var(--light-blue);
@@ -13,27 +11,17 @@ body {
     position: relative;
 }
 
-/* Soft edge glow applied only below the top bar */
+/* Glow overlay starts exactly below the header */
 body::before {
     content: "";
     position: fixed;
-    top: 100px;                /* tweak if header height changes */
+    top: var(--header-height);
     left: 0;
     width: 100%;
-    height: calc(100% - 80px);
+    height: calc(100% - var(--header-height));
     pointer-events: none;
     z-index: 9999;
     box-shadow: inset 0 0 100px 15px rgba(77, 159, 236, 0.4);
-}
-
-#background-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
 }
 
 main {
